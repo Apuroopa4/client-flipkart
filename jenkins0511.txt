@@ -1,0 +1,36 @@
+Agenda
+	master and slave
+		installing docker	
+			sudo apt-get update
+			sudo apt-get install ca-certificates curl gnupg lsb-release
+
+			sudo mkdir -p /etc/apt/keyrings
+			curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+			echo \
+			"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+			$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+			sudo apt-get update
+
+			sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+		configuring docker
+			sudo usermod -aG docker $USER
+			docker version | grep API
+			
+		install docker and backup plugin
+	
+		
+building wide veriety of application requires different os,
+	one jenkins server,
+		different machines
+			mac, win, linux - 
+			
+if(os==mac){
+	use 10.21.185.125
+master and slave
+	master - one machines	
+		n number of slaves.
+			vm	- multiple vm - azure - 2 vm , attach them as slaves to jenkins
+			containers	- docker proxy - docker, proxy, configuration
+			cloud applications - cloud subscriptions
